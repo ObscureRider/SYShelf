@@ -1,0 +1,14 @@
+{
+  "hello": "Salutare Ashchiuta (ro)",
+  "dynamic": "transloco {{value}}",
+  "apples": "I have {{ count }} apples",
+
+  "dashboard": {
+    "tabBar": {
+      "first": "Statistici",
+      "second": "Notificari",
+      "third": "Rapoarte",
+      "fourth": "Magazin"
+    }
+  }
+}

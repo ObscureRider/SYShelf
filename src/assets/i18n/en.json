@@ -1,0 +1,14 @@
+{
+  "hello": "Hello Mark (en)",
+  "dynamic": "transloco {{value}}",
+  "apples": "I have {{ count }} apples",
+
+  "dashboard": {
+    "tabBar": {
+      "first": "Analytics",
+      "second": "Notifications",
+      "third": "Reports",
+      "fourth": "Store"
+    }
+  }
+}
