@@ -9,6 +9,7 @@
 
 # dependencies
 /node_modules
+package-lock.json
 
 # profiling files
 chrome-profiler-events*.json
@@ -29,6 +30,12 @@ chrome-profiler-events*.json
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+# Local stuffs
+/.tmp
+**.local/*
+**/*.local
+.bkp
 
 # misc
 /.angular/cache

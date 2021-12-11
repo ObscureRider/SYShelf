@@ -1,0 +1,63 @@
+$warn-dev-prefix: 'OBS DEV --->';
+
+/*
+### Create Grid Style ###
+*/
+
+// 1. Define grid type
+$enable-grid-style: 'obscure' !default; // obscure | graph
+
+
+// 2. Setup grid colors: mild | moderate | intense
+$grid_background: #FFFFFF;
+$grid_mild: rgba(0, 170, 255, .05);
+$grid_moderate: rgba(0, 170, 255, .1);
+$grid_intense: rgba(0, 170, 255, .4);
+
+
+// 3. Create grid mixin
+@mixin grid-obscure {
+  background: linear-gradient(-90deg, $grid_moderate 1px, transparent 1px),
+  linear-gradient($grid_moderate 1px, transparent 1px),
+  linear-gradient(-90deg, $grid_mild 32px, transparent 0),
+  linear-gradient($grid_mild 32px, transparent 0),
+  $grid_background;
+
+  background-size: 8px 8px,
+  8px 8px,
+  40px 40px,
+  40px 40px
+}
+
+@mixin grid-graph {
+  background: linear-gradient(-90deg, $grid_moderate 1px, transparent 1px),
+  linear-gradient($grid_moderate 1px, transparent 1px),
+  linear-gradient(-90deg, $grid_moderate 1px, transparent 1px),
+  linear-gradient($grid_moderate 1px, transparent 1px),
+  linear-gradient(transparent 3px, $grid_background 3px, $grid_background 78px, transparent 78px),
+  linear-gradient(-90deg, $grid_intense 1px, transparent 1px),
+  linear-gradient(-90deg, transparent 3px, $grid_background 3px, $grid_background 78px, transparent 78px),
+  linear-gradient($grid_intense 1px, transparent 1px),
+  $grid_background;
+  background-size: 8px 8px,
+  8px 8px,
+  80px 80px,
+  80px 80px,
+  80px 80px,
+  80px 80px,
+  80px 80px,
+  80px 80px;
+}
+
+
+body {
+
+  // 4. Switch definitions to render a specific grid
+  @warn $warn-dev-prefix + 'Generate New Grid: ' + $enable-grid-style; // !Optional
+  @if ($enable-grid-style == 'obscure') {
+
+    @include grid-obscure;
+  } @else if ($enable-grid-style == 'graph') {
+    @include grid-graph;
+  }
+}

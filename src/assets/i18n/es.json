@@ -1,0 +1,14 @@
+{
+  "hello": "Hola Maria (es)",
+  "dynamic": "transloco {{value}}",
+  "apples": "Tengo {{ count }} manzanas",
+
+  "dashboard": {
+    "tabBar": {
+      "first": "Analítica",
+      "second": "Notificaciones",
+      "third": "Informes",
+      "fourth": "Tienda"
+    }
+  }
+}

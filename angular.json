@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "sys",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -74,6 +74,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngSYShelf:build",
+            "host": "192.168.1.142"
+          },
           "configurations": {
             "production": {
               "browserTarget": "ngSYShelf:build:production"
@@ -109,9 +113,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "ngSYShelf"
+  "defaultProject": "ngSYShelf",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
